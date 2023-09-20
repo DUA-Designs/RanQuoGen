@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Quote</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css" integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<style type="text/css">
+*{
+  margin:0px;
+  padding:0px;
+  font-family: 'Raleway', sans-serif;
+  
+  border-radius:5px;
+}
+body{width=100vw;
+  height=100vh;
+  background-color:#27ae60;
+}
+#quote-box{
+  width:500px;
+   color:green;
+  background-color:white;
+  margin:25vh auto;
+  padding:10px;
+}
+#quote-box #quoteicn{
+  font-size:2em;
+  
+}
+#quote-box i{
+  font-size:1.2em;
+ 
+  margin-top:7px;
+}
+#div-quote{
+
+  
+  text-align:center;
+  padding:15px;
+}
+#div-author{
+  height:30px;
+  
+  text-align:end;
+  margin:0 40px;
+  opacity:0.7;
+  padding:10px;
+}
+#author{
+  font-size:18px;
+  color:green;
+}
+
+#new-quote{
+  width:80px;
+  height:40px;
+  background-color:green;
+  cursor:pointer;
+  color:white;
+   
+ 
+  
+  
+}
+#all-clicks{
+  display:flex;
+  justify-content:space-between;
+  margin:0 40px;
+   
+}
+
+#icons a{
+  text-decoration:none;
+  color:white;
+}
+
+
+#quote-box #by{
+  text-align:center;
+  border-bottom:1px solid black;
+  font-size:13px;
+  width:70px;
+  margin:0 auto;
+  
+ 
+  
+}
+#icons{
+  width:90px;
+  display:flex;
+  justify-content:space-between;
+  text-align:center;
+  
+}
+#box1 ,#box2{
+  width:40px;
+  height:35px;
+ 
+
+
+}
+#text{
+  font-size:28px;
+  padding:15px;
+  width:400px;
+  margin:0 auto;
+  font-weight:300;
+}
+ 
+	</style>
+</head>
+<body>
+<div id="quote-box">
+  <div id="div-quote"><i class="fa-solid fa-quote-left" id="quoteicn"> </i><span id="text">Build your own dreams, or someone else will hire you to build theirs.</span></div>
+		<div id="div-author"
+><p id="author">-author</p></div>
+  <div id="all-clicks"><div id="icons"><a id="tweet-quote" href="twitter.com/intent/tweet" target="_blank"><div id="box1" ><i class="fa-brands fa-twitter"></i></div></a><a href=""><div id="box2"   ><i class="fa-brands fa-tumblr"></i></div></a></div>
+		<div id="div-newQuote"><button id="new-quote" onClick="newquote()">New Quote</button></div></div>
+  <p id="by"><em>by aravind</em></p>
+  	</div>
+
+
+
+
+		
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+  $("#text").fadeIn(1000,"slow");
+});
+const quotes=[{quote:"One cannot think well, love well, sleep well, if one has not dined well.",author:"Virginia Woolf"},{quote:"Be not afraid of discomfort. If you can't put yourself in a situation where you are uncomfortable, then you will never grow. You will never change. You'll never learn.",author:"Jason Reynolds"},{quote:"What’s money? A man is a success if he gets up in the morning and goes to bed at night and in between does what he wants to do.",author:"Bob Dylan"},{quote:"We can easily forgive a child who is afraid of the dark; the real tragedy of life is when men are afraid of the light.",author:"Plato"},{quote:"God grant me the serenity to accept the things I cannot change, the courage to change the things I can, and the wisdom to know the difference.",author:"Reinhold Niebuhr"},{quote:"Nothing is impossible, the word itself says, “I’m possible!”",author:"Audrey Hepburn"},{quote:"You become what you believe.",author:"Oprah Winfrey"},{quote:"Winning isn’t everything, but wanting to win is.",author:"Vince Lombardi"},{quote:"If the wind will not serve, take to the oars.",author:"Latin Proverb"},{quote:"There is only one way to avoid criticism: do nothing, say nothing, and be nothing.",author:"Aristotle"},{quote:"People often say that motivation doesn’t last. Well, neither does bathing. That’s why we recommend it daily.",author:"Zig Ziglar"},{quote:"Strive not to be a success, but rather to be of value.",author:"Albert Einstein"},{quote:"If you want to lift yourself up, lift up someone else.",author:"Booker T. Washington"},{quote:"Either you run the day, or the day runs you.",author:"Jim Rohn"},{quote:"Ask and it will be given to you; search, and you will find; knock and the door will be opened for you.",author:"Jesus"},{quote:"The two most important days in your life are the day you are born and the day you find out why.",author:"Mark Twain"},{quote:"It does not matter how slowly you go as long as you do not stop.",author:"confucious"},{quote:"Appreciation is a wonderful thing. It makes what is excellent in others belong to us as well.Appreciation is a wonderful thing. It makes what is excellent in others belong to us as well.",author:"Voltaire"},{quote:"Self-awareness and self-love matter. Who we are is how we lead.",author:"Brene Brown"},{quote:"We are cups, constantly and quietly being filled. The trick is knowing how to tip ourselves over and let the beautiful stuff out.",author:"Ray Bradbury"},{quote:"Dwell in possibility.",author:"Emily Dickinson"},{quote:"A day is a day. It's just a measurement of time. Whether it's a good day or a bad day is up to you. It's all a matter of perception.",author:"Donald L. Hicks"}];
+console.log(quotes.length)
+
+const colors = [
+	"#00f6ed",
+	"#cb0000",
+	"#1fe842",
+	"#3700a1",
+	"#7bc200",
+	"#0035a8",
+	"#00dd6f",
+	"#9b0089",
+	"#22ff9e",
+	"#650075",
+	"#7affb7",
+	"#ae2c96",
+	"#009348",
+	"#ff83ff",
+	"#004b00",
+	"#ff6b9d",
+	"#00ecff",
+	"#e46a13",
+	"#00d8ff",
+	"#ffb200",
+	"#44cff1",
+	"#420000",
+	"#98d4e0",
+	"#430012",
+	"#dcb245",
+	"#70003d",
+	"#006b48",
+	"#efad7e",
+	"#001800",
+	"#002b06"
+]
+
+
+ 
+function newquote(){
+  let random=Math.round(Math.random()*20);
+  
+ document.body.style.setProperty('background-color', colors[random]);
+   
+  
+let text=document.getElementById("text");
+  
+let author=document.getElementById("author");
+  let newquote=document.getElementById("new-quote");
+  let box1=document.getElementById("box1");
+  
+  let box2=document.getElementById("box2");
+ 
+   let quoteleft=document.getElementById("quoteicn");
+  
+ 
+  
+ 
+
+  document.getElementById("text").innerHTML=
+quotes[random].quote ;
+   document.getElementById("author").innerHTML="-"+quotes[random].author;
+  
+  
+  author.style.color=colors[random];
+   text.style.color=colors[random];
+  newquote.style.backgroundColor=colors[random];
+  
+  box1.style.backgroundColor=colors[random];
+   box2.style.backgroundColor=colors[random];
+  quoteleft.style.color=colors[random];
+  
+ 
+
+  
+ 
+
+  
+ 
+  
+
+  
+  
+  
+  
+  
+}
+newquote();
+
+</script>
+</body>
+</html>
